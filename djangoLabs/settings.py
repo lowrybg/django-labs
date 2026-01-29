@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'djangoLabs.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "django_labs",
+        "NAME": "django_labs_db",
         "USER": "postgres",
         "PASSWORD": "admin",
         "HOST": "127.0.0.1",
