@@ -5,3 +5,5 @@ class Task(models.Model):
     text = models.TextField()
     is_done = models.BooleanField(default=False)
 
+    def __str__(self):
+        return f"{self.title} - {self.text} - is complete: {self.is_done}"
