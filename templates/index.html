@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task App</title>
+</head>
+<body>
+    <h1>Tasks</h1>
+    {% for task in tasks %}
+        <li>{{ task.title}} - {{task.is_done }}</li>
+    {% endfor %}
+</body>
+</html>

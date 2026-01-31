@@ -3,10 +3,23 @@ from django.shortcuts import render
 
 from tasks.models import Task
 
-
 def index(request: HttpRequest) -> HttpResponse:
-    all_tasks = Task.objects.all()
 
-    return HttpResponse('\n'.join(str(t) for t in all_tasks),
-                        content_type='text/plain; charset=utf-8',
-                        )
+
+   context = {
+       'tasks' : Task.objects.all(),
+   }
+   return render(request, 'index.html', context)
+
+
+# def index2(request: HttpRequest) -> HttpResponse:
+#     all_tasks = Task.objects.all()
+#
+#     template = [
+#         '<h1>Tasks</h1>',
+#         *[f"<li>{t.title} - {t.is_done}</li>" for t in all_tasks]
+#     ]
+#
+#     return HttpResponse('\n'.join(template),
+#                         content_type="text/html",
+#                         )
