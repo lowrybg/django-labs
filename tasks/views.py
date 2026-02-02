@@ -3,13 +3,19 @@ from django.shortcuts import render
 
 from tasks.models import Task
 
-def index(request: HttpRequest) -> HttpResponse:
+def index(request: HttpRequest,) -> HttpResponse:
 
 
    context = {
        'tasks' : Task.objects.all(),
    }
    return render(request, 'index.html', context)
+
+def id_view(request: HttpRequest, num) -> HttpResponse:
+    return HttpResponse(f"The type is str num {num} {type(num)}", content_type="text/plain")
+
+def uuid_view(request: HttpRequest, uuid:str) -> HttpResponse:
+    return HttpResponse(f"The type is uuid {uuid} {type(uuid)}", content_type="text/plain")
 
 
 # def index2(request: HttpRequest) -> HttpResponse:
