@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Task App</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Task List{% endblock %}
+
+{% block content %}
     <h1>Tasks</h1>
+    <ul>
     {% for task in tasks %}
-        <li>{{ task.title}} - {{task.is_done }}</li>
+        <li>{{ task.title}} - {% if task.is_done %}Done{% else %}Not Done{% endif %}</li>
     {% endfor %}
-</body>
-</html>
+    </ul>
+{% endblock %}
